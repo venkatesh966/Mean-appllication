@@ -1,0 +1,41 @@
+<p>
+  customerform works!
+</p>
+<div>
+    <form novalidate (ngSubmit)="save(signupForm)" #signupForm="ngForm">
+      <div class="form-group" [ngClass]="{'has-error': (firstNameVar.touched || firstNameVar.valid)}">
+        <label class="col-md-8">
+          <input class="form-control" id="firstNameId" type="text" placeholder="first name (required)" required minlength="3" [(ngModel)]="customer.firstNameVar"
+            name="firstName" #firstNameVar="ngModel" />
+            <input class="form-control" id="lastNameId" type="text" placeholder="last name (required)" required minlength="2" [(ngModel)]="customer.lastNameVar"
+            name="lastName" #lastNameVar="ngModel" />
+            <input class="form-control" id="emailId" type="text" placeholder="email (required)" required minlength="2" [(ngModel)]="customer.emailVar"
+            name="email" #email="ngModel" required ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" />
+            <div *ngIf="email.errors && (email.dirty || email.touched)" class="alert-email alert-danger-email"><br>
+             
+              <div [hidden]="!contactname.errors">
+                Please input a valid email
+              </div>
+            </div>
+            <span class="help-block" *ngIf="(lastNameVar.touched || lastNameVar.dirty) && (!lastNameVar.valid)">
+              <span *ngIf="lastNameVar.errors.required">
+                Please fill in the name
+              </span>
+              <span *ngIf="lastNameVar.errors.minlength">
+                lastName more than 1 characters
+              </span></span>
+          <span class="help-block" *ngIf="(firstNameVar.touched || firstNameVar.dirty) && (!firstNameVar.valid)">
+            <span *ngIf="firstNameVar.errors.required">
+              Please fill in the name
+            </span>
+            <span *ngIf="firstNameVar.errors.minlength">
+              Name more than 3 charecters
+            </span>
+          </span>
+          
+          <button class="btn btn-primary" type="submit" [disabled]="!signupForm.form.valid">Submit</button>
+        </label>
+      </div>
+      
+    </form>
+  </div>

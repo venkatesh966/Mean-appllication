@@ -1,0 +1,23 @@
+
+<h1>WELCOME</h1>
+<h1>You have successfully logged on</h1>
+
+  <button  (click)="logout()">logout</button>
+
+<div class="container">   
+  
+  
+</div>
+<nav class='navbar navbar-nav'>
+  <div class='container-fluid'>
+      <li><button class="btn btn-primary" [routerLink]="['/album']">Album</button></li>
+      <li><button class="btn btn-primary" [routerLink]="['/comments']">Comments</button></li>
+    <li><button class="btn btn-primary" [routerLink]="['/home']">home</button></li>
+    <li><button class="btn btn-primary" [routerLink]="['/add']">add</button></li>
+    <li><button class="btn btn-primary" [routerLink]="['/student']">Student</button></li>
+    <li><button class="btn btn-primary" [routerLink]="['/customer']">Customerform</button></li>
+    
+    <!--<li><a routerLinkActive="active"[routerLink]="['/details/:code']"></a></li>-->
+    
+  </div>
+</nav>

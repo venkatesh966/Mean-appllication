@@ -1,0 +1,2 @@
+first validations-get and posts
+try catch is necessary only if we do not define error handling

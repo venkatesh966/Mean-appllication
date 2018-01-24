@@ -1,0 +1,30 @@
+<p>
+  static-students works!
+</p>
+<table class=' table table-bordered'>
+    <thead>
+      <tr>
+        <th>PlayerId</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Percentage</th>
+        
+      </tr>
+     </thead>
+     <tbody>
+       <tr *ngIf='members'></tr>
+       <tr *ngFor='let student of members'>
+          <td><a [routerLink]="['/student',student.playerid]">{{student.playerid}}</a></td>
+         <td>{{student.Name | uppercase}}</td>
+         <td>{{student.branch | uppercase}}</td>
+        
+         
+         
+          <td> {{student.percentage}}
+          </td>   
+         
+       </tr>
+       
+    
+     </tbody>
+    </table>
